@@ -1,5 +1,5 @@
 {
-  "name": "simpler-sql",
+  "name": "nodejs-playground",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "@akashrajpurohit/snowflake-id": "^2.0.0",
+    "@octokit/rest": "^22.0.0",
     "@semperfortis/snowflakejs": "^1.0.1",
-    "axios": "^1.7.7",
-    "jspdf": "^2.5.1",
+    "axios": "^1.12.2",
+    "jspdf": "^3.0.3",
     "knex": "^3.1.0",
     "snowflake-uuid": "^1.0.0",
     "ts-migrate": "^0.1.35",
@@ -20,6 +21,6 @@
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "typescript": "^5.9.2"
   }
 }

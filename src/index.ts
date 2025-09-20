@@ -27,6 +27,12 @@ export class SampleClass {
 	phoneNumberVerifiedAtDate?: string;
 }
 
+import { Octokit } from "@octokit/rest";
+
+const octokit = new Octokit({
+	auth: process.env.GITHUB_TOKEN
+});
+
 // export class PostgresSqlBulder {
 // 	private readonly sqlBuilder = knex({ client: 'pg' });
 
@@ -84,7 +90,7 @@ sqlBuilder<SampleClass>('users').delete().where('', '')
 
 // console.log('createQuezryKnex =', createQueryKnex);
 // console.log('sqlUpdateQuery2 =', sqlUpdateQuery2);
-console.log('deleteQuery =', deleteQuery);
+// console.log('deleteQuery =', deleteQuery);
 // console.log('deleteQuery2 =', deleteQuery2);
 // console.log('select JOIN =>>>', selectJoin);
 
@@ -155,3 +161,32 @@ const lowerCaseObj = {
 // function createDefaultObject<T>(type: new () => T): T {
 // 	return d.create(type);
 // }
+
+// async function countCommits() {
+// 	const username = "username";
+// 	const targetDate = "2025-09-17";
+// 	const since = new Date(`${targetDate}T00:00:00Z`).toISOString();
+// 	const until = new Date(`${targetDate}T23:59:59Z`).toISOString();
+
+// 	const repos = await octokit.repos.listForUser({ username, per_page: 100 });
+
+// 	let totalCommits = 0;
+
+// 	for (const repo of repos.data) {
+// 		const commits = await octokit.repos.listCommits({
+// 			owner: username,
+// 			repo: repo.name,
+// 			since,
+// 			until,
+// 		});
+
+// 		const count = commits.data.length;
+// 		totalCommits += count;
+
+// 		console.log(`${repo.name}: ${count} commits on ${targetDate}`);
+// 	}
+
+// 	console.log(`\nTOTAL COMMITS on ${targetDate}:=>  ${totalCommits}`);
+// }
+
+// run().catch(console.error);
